@@ -189,7 +189,7 @@ app.UseSwagger();
 app.UseSwaggerUI(options =>
 {
     options.SwaggerEndpoint("/swagger/v1/swagger.json", "PixelSpot API v1");
-    options.RoutePrefix = "swagger"; // Keep Swagger UI at /swagger path
+    options.RoutePrefix = string.Empty; // Serve Swagger UI at root
     options.DocExpansion(Swashbuckle.AspNetCore.SwaggerUI.DocExpansion.List);
     options.EnableFilter();
     options.DisplayRequestDuration();
