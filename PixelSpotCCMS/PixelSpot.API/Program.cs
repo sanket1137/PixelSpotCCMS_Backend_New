@@ -44,7 +44,7 @@ try
                 var password = userInfo.Length > 1 ? Uri.UnescapeDataString(userInfo[1]) : "";
                 
                 // Create proper Npgsql connection string
-                connectionString = $"Host={host};Port={dbPort};Database={database};Username={username};Password={password};SslMode={sslMode};";
+                connectionString = $"Server={host};Database={database};User Id={username};Password={password};TrustServerCertificate=True;";
                 Console.WriteLine($"Successfully parsed DATABASE_URL into Npgsql connection string");
             }
             catch (Exception ex)

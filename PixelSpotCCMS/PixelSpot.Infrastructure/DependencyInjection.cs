@@ -20,7 +20,7 @@ public static class DependencyInjection
     {
         // Configure DbContext with PostgreSQL
         services.AddDbContext<ApplicationDbContext>(options =>
-            options.UseNpgsql(
+            options.UseSqlServer(
                 configuration.GetConnectionString("DefaultConnection"),
                 b => b.MigrationsAssembly(typeof(ApplicationDbContext).Assembly.FullName))
             );
